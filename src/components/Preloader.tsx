@@ -9,7 +9,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Simulate loading progress
+    // Simulate loading progress - adjusted for 3-3.5 second duration
     const interval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
@@ -21,10 +21,11 @@ const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
           }, 500);
           return 100;
         }
-        // Random increment between 1-5 for more realistic loading
-        return prev + Math.random() * 4 + 1;
+        // Adjusted increment for 3-3.5 second total duration
+        // Using smaller increments with slightly longer intervals
+        return prev + Math.random() * 3 + 2;
       });
-    }, 100);
+    }, 80); // Slightly longer interval for 3-3.5 second duration
 
     return () => clearInterval(interval);
   }, [onLoadingComplete]);
