@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import LazyImage from '../components/LazyImage';
 
 const About: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,10 +36,11 @@ const About: React.FC = () => {
           {/* Profile Image */}
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden bg-gray-800">
-              <img
+              <LazyImage
                 src="/ChatGPT Image Jun 13, 2025, 08_55_21 PM.png"
                 alt="Naman Art"
-                className="w-full h-full object-cover"
+                className="w-full h-full"
+                priority={true}
               />
             </div>
             {/* Decorative Elements */}
@@ -97,7 +99,7 @@ const About: React.FC = () => {
                 {/* Triple the logos for seamless loop */}
                 {brands.concat(brands, brands).map((brand, index) => (
                   <div key={index} className="flex-shrink-0 h-20 flex items-center justify-center px-8">
-                    <img
+                    <LazyImage
                       src={brand.logo}
                       alt={brand.name}
                       className="max-h-full max-w-full object-contain hover:scale-110 transition-transform duration-300"
