@@ -36,7 +36,7 @@ const About: React.FC = () => {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden bg-gray-800">
               <img
-                src="/image.png"
+                src="/ChatGPT Image Jun 13, 2025, 08_55_21 PM.png"
                 alt="Naman Art"
                 className="w-full h-full object-cover"
               />
