@@ -1,11 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const About: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const brands = [
+    { name: 'T-Series', logo: '/T-series-logo.svg' },
+    { name: 'Sony Music Entertainment', logo: '/Sony Music Entertainment.png' },
+    { name: 'Warner Music India', logo: '/WARNER-MUSIC-INDIA-LOGO-e1709294747578.webp' },
+    { name: 'Apni Dhun', logo: '/Apni Dhun Graphic Logo.png' },
+    { name: 'Brand Logo', logo: '/ekQ0AX5G_400x400.jpg' },
+  ];
+
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % brands.length);
+    }, 4000); // Change slide every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [brands.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % brands.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + brands.length) % brands.length);
+  };
 
   return (
     <div className="min-h-screen py-24 px-6 bg-gray-900">
@@ -68,36 +96,89 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Making Of Section */}
-        <div className="bg-gray-800 rounded-2xl p-12 mb-20">
+        {/* Brands That Chose My Vision */}
+        <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="font-heading text-4xl md:text-5xl font-normal mb-6 tracking-widest text-gray-100">
-              BEHIND THE SCENES
+              BRANDS THAT CHOSE MY VISION
             </h2>
             <p className="text-lg max-w-3xl mx-auto font-sans text-gray-300">
-              Get an inside look at my creative process and the passion that drives every project
+              Trusted by leading music labels and brands to create compelling visual narratives
             </p>
           </div>
 
-          {/* Video Placeholder */}
-          <div className="relative aspect-video bg-gray-700 rounded-xl overflow-hidden mb-8 group cursor-pointer">
-            <img
-              src="https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="The Making Of"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
-                <div className="w-0 h-0 border-l-[16px] border-l-gray-800 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1" />
-              </div>
+          {/* Logo Carousel */}
+          <div className="relative bg-white rounded-2xl p-8 overflow-hidden">
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <ChevronLeft className="h-6 w-6 text-gray-600" />
+            </button>
+            
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <ChevronRight className="h-6 w-6 text-gray-600" />
+            </button>
+
+            {/* Carousel Container */}
+            <div 
+              ref={carouselRef}
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {brands.map((brand, index) => (
+                <div
+                  key={index}
+                  className="w-full flex-shrink-0 flex items-center justify-center py-12"
+                >
+                  <div className="max-w-xs max-h-32 flex items-center justify-center">
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-500"
+                      style={{ maxHeight: '120px', maxWidth: '300px' }}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-              <h3 className="font-display text-2xl font-semibold mb-2 tracking-wide text-white">
-                "The Making Of: Creative Journey"
-              </h3>
-              <p className="font-sans text-white/70">
-                A deep dive into the creative process behind one of my most meaningful projects
-              </p>
+
+            {/* Slide Indicators */}
+            <div className="flex justify-center space-x-2 mt-6">
+              {brands.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentSlide 
+                      ? 'bg-gray-600 scale-110' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Infinite Sliding Strip (Alternative Visual) */}
+          <div className="mt-8 bg-white rounded-2xl overflow-hidden">
+            <div className="relative h-24 flex items-center">
+              <div className="flex animate-scroll-left space-x-16 whitespace-nowrap">
+                {/* First set of logos */}
+                {brands.concat(brands).map((brand, index) => (
+                  <div key={index} className="flex-shrink-0 h-16 flex items-center justify-center px-8">
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      className="max-h-full max-w-full object-contain filter grayscale opacity-60"
+                      style={{ maxHeight: '60px', maxWidth: '150px' }}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -113,6 +194,21 @@ const About: React.FC = () => {
           </cite>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .animate-scroll-left {
+          animation: scroll-left 20s linear infinite;
+        }
+      `}</style>
     </div>
   );
 };
