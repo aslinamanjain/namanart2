@@ -19,19 +19,6 @@ const About: React.FC = () => {
     { name: 'Desi Music Factory', logo: '/afaqs_2020-04_b8bc1ebc-0319-4e2a-bdab-00c52206e46b_image002.jpg' },
   ];
 
-  const advertisements = [
-    {
-      title: 'Karamyogi Atul Patel | TRIDENT GROUP',
-      url: 'https://www.youtube.com/watch?v=h34UTWSKOyk',
-      thumbnail: 'https://img.youtube.com/vi/h34UTWSKOyk/maxresdefault.jpg'
-    },
-    {
-      title: 'Jeeto Baazi Khel Ke | ICC Men\'s Champions Trophy 2025',
-      url: 'https://www.youtube.com/watch?v=nA0z8N04v70&list=RDnA0z8N04v70&start_radio=1',
-      thumbnail: 'https://img.youtube.com/vi/nA0z8N04v70/maxresdefault.jpg'
-    }
-  ];
-
   return (
     <div className="min-h-screen py-24 px-6 bg-gray-900">
       <div className="max-w-6xl mx-auto">
@@ -90,51 +77,6 @@ const About: React.FC = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Advertisement Section */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-4xl md:text-5xl font-normal mb-6 tracking-widest text-gray-100">
-              ADVERTISEMENT CAMPAIGNS
-            </h2>
-            <p className="text-lg max-w-3xl mx-auto font-sans text-gray-300">
-              Creating compelling visual narratives for brands and campaigns
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {advertisements.map((ad, index) => (
-              <a
-                key={index}
-                href={ad.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-gray-800 rounded-2xl overflow-hidden hover:bg-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-              >
-                <div className="relative aspect-video bg-gray-700 overflow-hidden">
-                  <img
-                    src={ad.thumbnail}
-                    alt={ad.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
-                      <div className="w-0 h-0 border-l-[12px] border-l-gray-800 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1" />
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display text-xl font-semibold mb-2 tracking-wide text-gray-100 group-hover:text-gray-200 transition-colors duration-300">
-                    {ad.title}
-                  </h3>
-                  <p className="font-sans text-gray-400 text-sm">
-                    Click to watch on YouTube
-                  </p>
-                </div>
-              </a>
-            ))}
           </div>
         </div>
 
