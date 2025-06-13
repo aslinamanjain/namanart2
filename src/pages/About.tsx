@@ -18,6 +18,19 @@ const About: React.FC = () => {
     { name: 'XP&D', logo: '/XP&D.png' },
   ];
 
+  const advertisements = [
+    {
+      title: 'Limitless | TRIDENT GROUP',
+      url: 'https://www.youtube.com/watch?v=h34UTWSKOyk',
+      thumbnail: `https://img.youtube.com/vi/h34UTWSKOyk/maxresdefault.jpg`,
+    },
+    {
+      title: 'Jeeto Baazi Khel Ke | ICC Men\'s Champions Trophy 2025',
+      url: 'https://www.youtube.com/watch?v=nA0z8N04v70',
+      thumbnail: `https://img.youtube.com/vi/nA0z8N04v70/maxresdefault.jpg`,
+    },
+  ];
+
   return (
     <div className="min-h-screen py-24 px-6 bg-gray-900">
       <div className="max-w-6xl mx-auto">
@@ -107,6 +120,55 @@ const About: React.FC = () => {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Advertisement Campaigns */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-4xl md:text-5xl font-normal mb-6 tracking-widest text-gray-100">
+              ADVERTISEMENT CAMPAIGNS
+            </h2>
+            <p className="text-lg max-w-3xl mx-auto font-sans text-gray-300">
+              Creating compelling brand stories through visual excellence
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {advertisements.map((ad, index) => (
+              <div key={index} className="group relative bg-gray-800 rounded-2xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+                <div className="aspect-video relative overflow-hidden">
+                  <img
+                    src={ad.thumbnail}
+                    alt={ad.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300" />
+                  
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                      <div className="w-0 h-0 border-l-[12px] border-l-gray-800 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="font-display text-xl font-bold mb-2 tracking-wide text-gray-100 group-hover:text-gray-200 transition-colors duration-300">
+                    {ad.title}
+                  </h3>
+                </div>
+                
+                {/* Click overlay */}
+                <a
+                  href={ad.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 z-10"
+                  aria-label={`Watch ${ad.title}`}
+                />
+              </div>
+            ))}
           </div>
         </div>
 
