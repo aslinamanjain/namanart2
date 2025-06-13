@@ -71,7 +71,7 @@ const Portfolio: React.FC = () => {
   const advertisementVideos = [
     { id: 'U9OyaeKqnRQ', title: 'Pregakem' },
     { id: 'DlHUSHptMek', title: 'Understanding your First Scan with FreeStyle Libre' },
-    { id: 'https://www.youtube.com/watch?v=h34UTWSKOyk', title: 'Limitless | Tridnet Group' }
+    { id: 'https://www.youtube.com/watch?v=h34UTWSKOyk', title: 'Limitless | Tridnet Group' },
     { id: 'xBa6JJEdqcI', title: 'Sharing Data with FreeStyle LibreView' },
   ];
 
