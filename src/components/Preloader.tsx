@@ -9,39 +9,23 @@ const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Preload critical images
-    const criticalImages = [
-      '/NAMAN ART.gif',
-      '/giphy.gif',
-      '/ChatGPT Image Jun 13, 2025, 08_55_21 PM.png'
-    ];
-
-    const preloadImages = criticalImages.map(src => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = resolve;
-        img.onerror = reject;
-        img.src = src;
-      });
-    });
-
-    // Simulate loading progress with actual image preloading
+    // Simulate loading progress - adjusted for 3-3.5 second duration
     const interval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
           clearInterval(interval);
-          // Wait for critical images to load
-          Promise.allSettled(preloadImages).then(() => {
-            setTimeout(() => {
-              setIsVisible(false);
-              setTimeout(onLoadingComplete, 500);
-            }, 300);
-          });
+          // Wait a bit before hiding preloader
+          setTimeout(() => {
+            setIsVisible(false);
+            setTimeout(onLoadingComplete, 500); // Wait for fade out animation
+          }, 500);
           return 100;
         }
-        return prev + Math.random() * 4 + 3;
+        // Adjusted increment for 3-3.5 second total duration
+        // Using smaller increments with slightly longer intervals
+        return prev + Math.random() * 3 + 2;
       });
-    }, 60); // Faster progress updates
+    }, 80); // Slightly longer interval for 3-3.5 second duration
 
     return () => clearInterval(interval);
   }, [onLoadingComplete]);
@@ -56,7 +40,6 @@ const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
           src="/giphy.gif"
           alt="Loading..."
           className="max-w-xs max-h-64 object-contain"
-          loading="eager"
         />
       </div>
 
