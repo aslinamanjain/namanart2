@@ -17,7 +17,6 @@ const About: React.FC = () => {
     { name: 'Cropped Logo', logo: '/cropped-logo-1-1.png' },
     { name: 'Josh Skills', logo: '/5636Vx3Q_400x400.jpg' },
     { name: 'Desi Music Factory', logo: '/afaqs_2020-04_b8bc1ebc-0319-4e2a-bdab-00c52206e46b_image002.jpg' },
-    { name: 'XP&D', logo: '/XP&D.png' },
   ];
 
   const advertisements = [
