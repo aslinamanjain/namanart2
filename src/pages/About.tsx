@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Award, Users, Zap, Heart } from 'lucide-react';
 
 const About: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,39 +7,16 @@ const About: React.FC = () => {
     setIsVisible(true);
   }, []);
 
-  const achievements = [
-    {
-      icon: <Award className="h-6 w-6" />,
-      title: 'Creative Excellence',
-      description: 'Recognized for innovative approaches in AI-assisted video production',
-    },
-    {
-      icon: <Users className="h-6 w-6" />,
-      title: 'Collaborative Spirit',
-      description: 'Worked with renowned artists including Ikka and emerging talents',
-    },
-    {
-      icon: <Zap className="h-6 w-6" />,
-      title: 'Technical Innovation',
-      description: 'Pioneering the integration of AI technology with traditional filmmaking',
-    },
-    {
-      icon: <Heart className="h-6 w-6" />,
-      title: 'Passion-Driven',
-      description: 'Every project is infused with genuine emotion and artistic integrity',
-    },
-  ];
-
   return (
     <div className="min-h-screen py-24 px-6 bg-gray-900">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h1 className="font-heading text-6xl md:text-7xl font-normal mb-6 tracking-ultra-wide text-gray-100">
-            ABOUT NAMANART
+            ABOUT NAMAN ART
           </h1>
           <p className="text-xl font-display font-medium tracking-widest text-gray-300">
-            VISUAL STORYTELLER • CREATIVE DIRECTOR • AI INNOVATOR
+            VISUAL ARTIST
           </p>
         </div>
 
@@ -49,7 +25,7 @@ const About: React.FC = () => {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden bg-gray-800">
               <img
-                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/image.png"
                 alt="Naman Art"
                 className="w-full h-full object-cover"
               />
@@ -89,37 +65,6 @@ const About: React.FC = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Achievements */}
-        <div className="mb-20">
-          <h2 className="font-heading text-4xl md:text-5xl font-normal text-center mb-12 tracking-widest text-gray-100">
-            CREATIVE PHILOSOPHY
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {achievements.map((achievement, index) => (
-              <div
-                key={index}
-                className="bg-gray-800 hover:bg-gray-700 p-8 rounded-xl hover:scale-105 transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gray-700 text-gray-300 rounded-lg flex items-center justify-center">
-                    {achievement.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-display text-xl font-semibold mb-3 tracking-wide text-gray-100">
-                      {achievement.title}
-                    </h3>
-                    <p className="leading-relaxed font-sans text-gray-300">
-                      {achievement.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
 
