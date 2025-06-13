@@ -110,6 +110,64 @@ const About: React.FC = () => {
           </div>
         </div>
 
+        {/* Advertisement Campaigns */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-4xl md:text-5xl font-normal mb-6 tracking-widest text-gray-100">
+              ADVERTISEMENTS SHOWCASE
+            </h2>
+            <p className="text-lg max-w-3xl mx-auto font-sans text-gray-300">
+              Creative campaigns that blend storytelling with brand messaging
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Advertisement 1 */}
+            <div className="group bg-gray-800 rounded-2xl overflow-hidden hover:bg-gray-750 transition-all duration-300">
+              <div className="aspect-video bg-gray-700 relative overflow-hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/h34UTWSKOyk"
+                  title="Karamyogi Atul Patel | TRIDENT GROUP"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-xl font-bold mb-2 text-gray-100 group-hover:text-gray-200 transition-colors duration-300">
+                  Karamyogi Atul Patel | TRIDENT GROUP
+                </h3>
+                <p className="font-sans text-gray-400 text-sm">
+                  Brand storytelling campaign
+                </p>
+              </div>
+            </div>
+
+            {/* Advertisement 2 */}
+            <div className="group bg-gray-800 rounded-2xl overflow-hidden hover:bg-gray-750 transition-all duration-300">
+              <div className="aspect-video bg-gray-700 relative overflow-hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/nA0z8N04v70"
+                  title="Jeeto Baazi Khel Ke | ICC Men's Champions Trophy 2025"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-xl font-bold mb-2 text-gray-100 group-hover:text-gray-200 transition-colors duration-300">
+                  Jeeto Baazi Khel Ke | ICC Men's Champions Trophy 2025
+                </h3>
+                <p className="font-sans text-gray-400 text-sm">
+                  Sports campaign creative
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Quote Section */}
         <div className="text-center bg-gradient-to-r from-gray-800 to-transparent rounded-2xl p-12">
           <blockquote className="font-display text-2xl md:text-3xl italic leading-relaxed mb-6 tracking-wide text-gray-100">
