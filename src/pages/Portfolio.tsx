@@ -200,4 +200,761 @@ const Portfolio: React.FC = () => {
     { id: 'JkBXWpSdWEE', title: 'DANGAL | AAKASH | DEEPSTAR | OFFICIAL MUSIC VIDEO | MAYANKFLASH | DILLI 92 GANG | 2019' },
     { id: 'zN8NFHeD2V4', title: 'Temperature High | (Full HD) | Jimmy Manku |Punjabi Songs 2019' },
     { id: '5yphI0_4M14', title: 'Bhole - Trance 2019 | Official Video | Mr. Diamond' },
-    { id: 'jXdkTRF7-wk', title: 'Negative (Official Video) |
+    { id: 'jXdkTRF7-wk', title: 'Negative (Official Video) | Vishu OG | Dj Sky | Punjabi Songs 2020 | Desi Rock' },
+    { id: 'bqdLktOcnPY', title: 'ZILA BIJNOR - AKKI RAP KING FEAT ANUBHAV JAIN NEW RAP SONG 2019' },
+    { id: 'Le5_uBel-eU', title: 'Karte Kalesh | Sweta Chauhan, Firoz Malik, Jessu Singh, Magical | New Haryanvi Songs Haryanavi 2019' },
+    { id: 'tuIueNdWDIc', title: 'Jhandoli || Sunder Rajput || Rehan Akhriya || Varun Rawal || Akanksha Soni || Anurag Chauhan' },
+    { id: 'vuhFMMr-E5c', title: 'Lakshan| ROYAL ANEE MUSIC | Raaj Jones Fresh | 2019' },
+    { id: 'D02NWKs-iqk', title: 'Crime City ( MuzaffarNagar ) UP12 Full Video Song - Akshay Prod. by Jazz Mafiaa' },
+    { id: 'qyA9OKjHtaM', title: 'हथियार Weapon Punjabi Song - Vishu | DJ Sky | Punjabi Songs 2019 | Desi Rock' },
+    { id: '3YK9NWsu4xE', title: 'BABY GIRL || AKSHAY FEAT RAPSTAR MJ (PROD.BY - JAZZ MAFIAA) VALENTINES SPECIAL || 2019' },
+    { id: 'qSzfuZUxhSs', title: '#PRISMANTRA | PRISM ft. Riyaazi |Official Music Video |White horse Studios|2019' },
+    { id: '8nZZMPULx3M', title: 'UP 12 Video Song ( MuzaffarNagar 2 ) Akshay (Akki Rap King) Feat Akkuru' },
+    { id: 'ZqsUIjHTQdI', title: 'MIRROR | Tkay | Harix | Hip Hop Song | Hindi Rap | Latest Songs 2019' },
+    { id: 'AytAwySMvSs', title: 'Zindagi Trikon (Official Video) | GSIR | Mynk Ki Filam | Latest Hindi Rap Song | hip-hop | Rap' },
+    { id: 'byX4rwOQuZk', title: 'Sab Slow | BB | Latest Hip Hop Song | Galat Gang Records | Latest Songs 2018' },
+    { id: 'A2iUSFCFeyk', title: 'Khush Hoon | Muhfaad | Agsy | Prerna Nepali | Mynk Ki Filam | 2018' },
+    { id: '9FSuJLqvE1s', title: 'DELHI KI BAATCHEET | MAGICAL |  OFFICIAL MUSIC VIDEO | 2018' },
+    { id: 'hN4lkg5r7BI', title: 'BEWAJAH - SWARESH | Kartavya | Mynk Ki Filam | Latest Hindi Official Music Video 2018' },
+    { id: 'p_8YpYjO8CM', title: 'Darubaaz | Sahil Khan, Aannie Kadam | Magical |  Hindi Songs 2018' },
+    { id: '8UMWEDpGpsY', title: 'Rishtedaar (Official Music Video) | Risky | Farrago Music | Latest Hindi Rap Song 2018 |' },
+    { id: 'aWlv4HLPTj0', title: 'BOLTE GUNGE | Official VIDEO | KALAZONE | RS | 2018 |' },
+    { id: 'WOrUt8W47-g', title: 'DESI TUDE | Mukesh Chaudhary, Aman Hundal |  Haryanvi songs Haryanavi 2018 | VOHM' },
+    { id: 't1HYXynB7fE', title: 'Memories (Video) | Chahat Sharma  | Latest New Punjabi Songs | Rolling Tape Films | Farrago Music' },
+    { id: '8vcrV1ob3Qg', title: 'Muhfaad | Bitch I\'m A Dawgg | Mynk ki filam (Official Music Video) | 2018' },
+    { id: '56O2FkLE5Ag', title: 'Mashup 2017 | Funkaar | New Year Party Song | 2018' },
+    { id: 'CF6SKMi5MS8', title: 'Bodyguard | Vicky Thakur Ft. Nippu Nepewala | Latest Most Haryanvi songs 2017 | VOHM' },
+    { id: 'KjTVfRPCGZY', title: 'STORY OF KAKKARS  ( Chapter 1)  - Tony Kakkar, Neha Kakkar & Sonu Kakkar' },
+    { id: 'l4KOZOcgkvc', title: 'Are Bhai Bhai | Muhfaad | Harjas | Mynk ki filam' },
+    { id: 'sQDYuq6niHo', title: '2) UP -  AAKARSHIT | #PARADOX |2017' },
+    { id: '-eFpNWJgz2M', title: '1) INTRO - AAKARSHIT | #PARADOX | 2017' },
+    { id: 'ZxPQp5XZn0w', title: 'DILLI WASI  | SWARESH | Latest Hindi Song 2017' },
+    { id: 'ZmYvlSuacAE', title: 'Valentine Day || FULL SONG || Udit Mahana || Sonu Makan || Chirag Mahna || STEELBIRD ENTERTAINMENT' },
+    { id: 'qlzPmqKbRDo', title: 'Muhfaad - Sab Mazze Mein' },
+    { id: '3I_5nD-ldIk', title: 'Patola | Official Music Video | Anmol Gagan Maan |  Songs 2016 | Jass Records' },
+    { id: 'FNEiDR05iAU', title: 'Asardar | Susti Anthem | Official Music Video | Latest Hindi Rap Song 2016 | Desi Hip Hop Inc' },
+  ];
+
+  // Album covers and posters data with all images including new ones
+  const albumCovers = [
+    {
+      id: 1,
+      image: '/271895266_4911087985623934_2624660907301897446_n.webp',
+    },
+    {
+      id: 2,
+      image: '/472125053_18481545793062406_7676319150049329358_n.jpg',
+    },
+    {
+      id: 3,
+      image: '/SnapInsta.to_173090840_308200040751966_8679189721205119769_n.jpg',
+    },
+    {
+      id: 4,
+      image: '/SnapInsta.to_176520996_1665412927180045_6728980124454699181_n.jpg',
+    },
+    {
+      id: 5,
+      image: '/SnapInsta.to_275600141_146335131183628_4164826839623651607_n.jpg',
+    },
+    {
+      id: 6,
+      image: '/SnapInsta.to_276003019_488834996058322_6776313799444352570_n.jpg',
+    },
+    {
+      id: 7,
+      image: '/SnapInsta.to_290351441_1398438347290547_6745698366078385163_n.jpg',
+    },
+    {
+      id: 8,
+      image: '/SnapInsta.to_308028021_4867071576727564_4488088787961724423_n.jpg',
+    },
+    {
+      id: 9,
+      image: '/SnapInsta.to_314026947_850130653003703_4847075968031239765_n.jpg',
+    },
+    {
+      id: 10,
+      image: '/SnapInsta.to_318135098_674830017452305_6397829693916687356_n copy copy.jpg',
+    },
+    {
+      id: 11,
+      image: '/SnapInsta.to_341955428_238375682189322_8903338927072876169_n copy copy.jpg',
+    },
+    {
+      id: 12,
+      image: '/SnapInsta.to_358639305_18374822476062406_5771097012007308836_n copy copy.jpg',
+    },
+    {
+      id: 13,
+      image: '/SnapInsta.to_411873655_7611697560468dd71_1653460974569319683_n (1) copy copy.jpg',
+    },
+    {
+      id: 14,
+      image: '/SnapInsta.to_411873655_761169756046871_1653460974569319683_n.jpg',
+    },
+    {
+      id: 15,
+      image: '/SnapInsta.to_426340470_7182970705105711_6488078939018039786_n.jpg',
+    },
+    {
+      id: 16,
+      image: '/SnapInsta.to_468209500_18474030433062406_9066135542449298808_n.jpg',
+    },
+    {
+      id: 17,
+      image: '/SnapInsta.to_470174654_18477468892062406_4998258246393935202_n.jpg',
+    },
+    {
+      id: 18,
+      image: '/SnapInsta.to_471864078_18480106300062406_656075779399158_n.jpg',
+    },
+    {
+      id: 19,
+      image: '/SnapInsta.to_504441240_18511530358062406_1162404576387789428_n.jpg',
+    },
+  ];
+
+  const projects = [
+    {
+      id: 1,
+      title: 'Sufi Soul Journey',
+      category: 'direction',
+      image: 'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'A cinematic exploration of spiritual awakening through Sufi traditions',
+      collaboration: 'Collaboration with Ikka',
+      year: '2024',
+    },
+    {
+      id: 2,
+      title: 'Urban Poetry',
+      category: 'typography',
+      image: 'https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Dynamic typographic animations bringing street poetry to life',
+      year: '2024',
+    },
+    {
+      id: 3,
+      title: 'Midnight Concert Series',
+      category: 'concerts',
+      image: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Immersive visual experience for live electronic music performances',
+      year: '2024',
+    },
+    {
+      id: 4,
+      title: 'Dreams in Motion',
+      category: 'music-videos',
+      image: 'https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Surreal music video exploring the boundaries between dreams and reality',
+      year: '2023',
+    },
+    {
+      id: 5,
+      title: 'Tech Revolution Campaign',
+      category: 'advertisements',
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Bold advertising campaign showcasing the future of technology',
+      year: '2024',
+    },
+    {
+      id: 6,
+      title: 'Hip-Hop Chronicles',
+      category: 'direction',
+      image: 'https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Raw documentary-style direction for underground hip-hop culture',
+      collaboration: 'Collaboration with Ikka',
+      year: '2023',
+    },
+    {
+      id: 7,
+      title: 'Neon Nights Typography',
+      category: 'typography',
+      image: 'https://images.pexels.com/photos/2693212/pexels-photo-2693212.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Cyberpunk-inspired typographic animations for electronic music',
+      year: '2024',
+    },
+  ];
+
+  const filteredProjects = activeCategory === 'all' 
+    ? projects 
+    : projects.filter(project => project.category === activeCategory);
+
+  const showDirectionVideos = activeCategory === 'direction' || activeCategory === 'all';
+  const showTypographyVideos = activeCategory === 'typography' || activeCategory === 'all';
+  const showAIVideos = activeCategory === 'ai-videos' || activeCategory === 'all';
+  const showConcertVisuals = activeCategory === 'concerts' || activeCategory === 'all';
+  const showMusicVideos = activeCategory === 'music-videos' || activeCategory === 'all';
+  const showAdvertisements = activeCategory === 'advertisements' || activeCategory === 'all';
+  const showAlbumCovers = activeCategory === 'album-covers' || activeCategory === 'all';
+
+  // Handle fullscreen image
+  const openFullscreen = (imageSrc: string) => {
+    setFullscreenImage(imageSrc);
+  };
+
+  const closeFullscreen = () => {
+    setFullscreenImage(null);
+  };
+
+  // Handle escape key to close fullscreen
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeFullscreen();
+      }
+    };
+
+    if (fullscreenImage) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [fullscreenImage]);
+
+  return (
+    <div className="min-h-screen py-24 px-6 bg-gray-900">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h1 className="font-heading text-6xl md:text-7xl font-normal mb-6 tracking-ultra-wide text-gray-100">
+            PORTFOLIO
+          </h1>
+          <p className="text-xl max-w-3xl mx-auto leading-relaxed font-sans text-gray-300">
+            A curated collection of visual stories, each crafted with passion and precision to create 
+            meaningful connections between art and audience.
+          </p>
+        </div>
+
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`px-6 py-3 rounded-full font-display font-medium tracking-wider transition-all duration-300 ${
+                activeCategory === category.id
+                  ? 'bg-gray-100 text-gray-900'
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Direction Videos Section */}
+        {showDirectionVideos && (
+          <div className="mb-16">
+            <h2 className="font-heading text-4xl md:text-5xl font-normal text-center mb-12 tracking-widest text-gray-100">
+              DIRECTION SHOWCASE
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {directionVideos.map((video, index) => (
+                <div
+                  key={video.id}
+                  className={`group cursor-pointer animate-fade-in`}
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  <div className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    {/* Video Thumbnail */}
+                    <div className="relative aspect-video overflow-hidden">
+                      <img
+                        src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        onError={(e) => {
+                          // Fallback to medium quality thumbnail if maxres doesn't exist
+                          e.currentTarget.src = `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`;
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                          <Play className="h-8 w-8 text-white ml-1" fill="white" />
+                        </div>
+                      </div>
+                      
+                      {/* YouTube Link */}
+                      <a
+                        href={`https://www.youtube.com/watch?v=${video.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 z-10"
+                        aria-label={`Watch ${video.title} on YouTube`}
+                      />
+                    </div>
+
+                    {/* Video Info */}
+                    <div className="p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-display font-medium uppercase tracking-widest text-gray-400">
+                          DIRECTION
+                        </span>
+                        <ExternalLink className="h-4 w-4 text-gray-500 group-hover:text-gray-300 transition-colors duration-300" />
+                      </div>
+                      
+                      <h3 className="font-display text-lg font-semibold group-hover:text-gray-300 transition-colors duration-300 tracking-wide text-gray-100 line-clamp-2">
+                        {video.title}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* AI Videos Section */}
+        {showAIVideos && (
+          <div className="mb-16">
+            <h2 className="font-heading text-4xl md:text-5xl font-normal text-center mb-12 tracking-widest text-gray-100">
+              AI VIDEOS SHOWCASE
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {aiVideos.map((video, index) => (
+                <div
+                  key={video.id}
+                  className={`group cursor-pointer animate-fade-in`}
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  <div className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    {/* Video Thumbnail */}
+                    <div className="relative aspect-video overflow-hidden">
+                      <img
+                        src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        onError={(e) => {
+                          // Fallback to medium quality thumbnail if maxres doesn't exist
+                          e.currentTarget.src = `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`;
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                          <Play className="h-8 w-8 text-white ml-1" fill="white" />
+                        </div>
+                      </div>
+                      
+                      {/* YouTube Link */}
+                      <a
+                        href={`https://www.youtube.com/watch?v=${video.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 z-10"
+                        aria-label={`Watch ${video.title} on YouTube`}
+                      />
+                    </div>
+
+                    {/* Video Info */}
+                    <div className="p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-display font-medium uppercase tracking-widest text-gray-400">
+                          AI VIDEO
+                        </span>
+                        <ExternalLink className="h-4 w-4 text-gray-500 group-hover:text-gray-300 transition-colors duration-300" />
+                      </div>
+                      
+                      <h3 className="font-display text-lg font-semibold group-hover:text-gray-300 transition-colors duration-300 tracking-wide text-gray-100 line-clamp-2">
+                        {video.title}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Concert Visuals Section */}
+        {showConcertVisuals && (
+          <div className="mb-16">
+            <h2 className="font-heading text-4xl md:text-5xl font-normal text-center mb-12 tracking-widest text-gray-100">
+              CONCERT VISUALS SHOWCASE
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {concertVisuals.map((visual, index) => (
+                <div
+                  key={index}
+                  className={`group cursor-pointer animate-fade-in`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    {/* Visual Thumbnail */}
+                    <div className="relative aspect-video overflow-hidden">
+                      <img
+                        src={visual.thumbnail}
+                        alt={visual.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                          <ExternalLink className="h-8 w-8 text-white" />
+                        </div>
+                      </div>
+                      
+                      {/* Google Drive Link */}
+                      <a
+                        href={visual.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 z-10"
+                        aria-label={`View ${visual.title} on Google Drive`}
+                      />
+                    </div>
+
+                    {/* Visual Info */}
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-display font-medium uppercase tracking-widest text-gray-400">
+                          CONCERT VISUALS
+                        </span>
+                        <ExternalLink className="h-4 w-4 text-gray-500 group-hover:text-gray-300 transition-colors duration-300" />
+                      </div>
+                      
+                      <h3 className="font-display text-xl font-semibold group-hover:text-gray-300 transition-colors duration-300 tracking-wide text-gray-100 mb-3">
+                        {visual.title}
+                      </h3>
+                      
+                      <p className="text-sm leading-relaxed font-sans text-gray-400">
+                        {visual.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Advertisements Section */}
+        {showAdvertisements && (
+          <div className="mb-16">
+            <h2 className="font-heading text-4xl md:text-5xl font-normal text-center mb-12 tracking-widest text-gray-100">
+              ADVERTISEMENTS SHOWCASE
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {advertisementVideos.map((video, index) => (
+                <div
+                  key={video.id}
+                  className={`group cursor-pointer animate-fade-in`}
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  <div className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    {/* Video Thumbnail */}
+                    <div className="relative aspect-video overflow-hidden">
+                      <img
+                        src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        onError={(e) => {
+                          // Fallback to medium quality thumbnail if maxres doesn't exist
+                          e.currentTarget.src = `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`;
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                          <Play className="h-8 w-8 text-white ml-1" fill="white" />
+                        </div>
+                      </div>
+                      
+                      {/* YouTube Link */}
+                      <a
+                        href={`https://www.youtube.com/watch?v=${video.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 z-10"
+                        aria-label={`Watch ${video.title} on YouTube`}
+                      />
+                    </div>
+
+                    {/* Video Info */}
+                    <div className="p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-display font-medium uppercase tracking-widest text-gray-400">
+                          ADVERTISEMENT
+                        </span>
+                        <ExternalLink className="h-4 w-4 text-gray-500 group-hover:text-gray-300 transition-colors duration-300" />
+                      </div>
+                      
+                      <h3 className="font-display text-lg font-semibold group-hover:text-gray-300 transition-colors duration-300 tracking-wide text-gray-100 line-clamp-2">
+                        {video.title}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Lyrical Typography Videos Section */}
+        {showTypographyVideos && (
+          <div className="mb-16">
+            <h2 className="font-heading text-4xl md:text-5xl font-normal text-center mb-12 tracking-widest text-gray-100">
+              LYRICAL TYPOGRAPHY SHOWCASE
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {typographyVideos.map((video, index) => (
+                <div
+                  key={video.id}
+                  className={`group cursor-pointer animate-fade-in`}
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  <div className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    {/* Video Thumbnail */}
+                    <div className="relative aspect-video overflow-hidden">
+                      <img
+                        src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        onError={(e) => {
+                          // Fallback to medium quality thumbnail if maxres doesn't exist
+                          e.currentTarget.src = `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`;
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                          <Play className="h-8 w-8 text-white ml-1" fill="white" />
+                        </div>
+                      </div>
+                      
+                      {/* YouTube Link */}
+                      <a
+                        href={`https://www.youtube.com/watch?v=${video.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 z-10"
+                        aria-label={`Watch ${video.title} on YouTube`}
+                      />
+                    </div>
+
+                    {/* Video Info */}
+                    <div className="p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-display font-medium uppercase tracking-widest text-gray-400">
+                          LYRICAL TYPOGRAPHY
+                        </span>
+                        <ExternalLink className="h-4 w-4 text-gray-500 group-hover:text-gray-300 transition-colors duration-300" />
+                      </div>
+                      
+                      <h3 className="font-display text-lg font-semibold group-hover:text-gray-300 transition-colors duration-300 tracking-wide text-gray-100 line-clamp-2">
+                        {video.title}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Music Video Edit Section */}
+        {showMusicVideos && (
+          <div className="mb-16">
+            <h2 className="font-heading text-4xl md:text-5xl font-normal text-center mb-12 tracking-widest text-gray-100">
+              MUSIC VIDEO EDIT SHOWCASE
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {musicVideos.map((video, index) => (
+                <div
+                  key={video.id}
+                  className={`group cursor-pointer animate-fade-in`}
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  <div className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    {/* Video Thumbnail */}
+                    <div className="relative aspect-video overflow-hidden">
+                      <img
+                        src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        onError={(e) => {
+                          // Fallback to medium quality thumbnail if maxres doesn't exist
+                          e.currentTarget.src = `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`;
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                          <Play className="h-8 w-8 text-white ml-1" fill="white" />
+                        </div>
+                      </div>
+                      
+                      {/* YouTube Link */}
+                      <a
+                        href={`https://www.youtube.com/watch?v=${video.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 z-10"
+                        aria-label={`Watch ${video.title} on YouTube`}
+                      />
+                    </div>
+
+                    {/* Video Info */}
+                    <div className="p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-display font-medium uppercase tracking-widest text-gray-400">
+                          MUSIC VIDEO EDIT
+                        </span>
+                        <ExternalLink className="h-4 w-4 text-gray-500 group-hover:text-gray-300 transition-colors duration-300" />
+                      </div>
+                      
+                      <h3 className="font-display text-lg font-semibold group-hover:text-gray-300 transition-colors duration-300 tracking-wide text-gray-100 line-clamp-2">
+                        {video.title}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Album Covers & Posters Section - 4 columns layout with 150% zoom */}
+        {showAlbumCovers && (
+          <div className="mb-16">
+            <h2 className="font-heading text-4xl md:text-5xl font-normal text-center mb-12 tracking-widest text-gray-100">
+              ALBUM COVERS & POSTERS
+            </h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              {albumCovers.map((cover, index) => (
+                <div
+                  key={cover.id}
+                  className={`group cursor-pointer animate-fade-in`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                  onClick={() => openFullscreen(cover.image)}
+                >
+                  <div className="aspect-square overflow-hidden rounded-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    <img
+                      src={cover.image}
+                      alt={`Album Cover ${cover.id}`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Regular Projects Grid */}
+        {(activeCategory === 'all' || (activeCategory !== 'direction' && activeCategory !== 'typography' && activeCategory !== 'ai-videos' && activeCategory !== 'concerts' && activeCategory !== 'music-videos' && activeCategory !== 'advertisements' && activeCategory !== 'album-covers')) && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project, index) => (
+              <div
+                key={project.id}
+                className={`group cursor-pointer animate-fade-in`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                  {/* Project Image */}
+                  <div className="relative aspect-video overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <ExternalLink className="h-8 w-8 text-white bg-gray-800/80 p-2 rounded-full" />
+                    </div>
+                  </div>
+
+                  {/* Project Info */}
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-sm font-display font-medium uppercase tracking-widest text-gray-400">
+                        {categories.find(cat => cat.id === project.category)?.name}
+                      </span>
+                      <span className="text-sm font-sans text-gray-500">
+                        {project.year}
+                      </span>
+                    </div>
+                    
+                    <h3 className="font-display text-xl font-semibold mb-3 group-hover:text-gray-300 transition-colors duration-300 tracking-wide text-gray-100">
+                      {project.title}
+                    </h3>
+                    
+                    <p className="text-sm leading-relaxed mb-3 font-sans text-gray-400">
+                      {project.description}
+                    </p>
+                    
+                    {project.collaboration && (
+                      <p className="text-sm font-display font-medium italic tracking-wide text-gray-300">
+                        {project.collaboration}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Call to Action */}
+        <div className="text-center mt-20 bg-gray-800 rounded-2xl p-12">
+          <h2 className="font-heading text-4xl md:text-5xl font-normal mb-6 tracking-widest text-gray-100">
+            READY TO CREATE SOMETHING EXTRAORDINARY?
+          </h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto font-sans text-gray-300">
+            Let's collaborate on your next project and bring your creative vision to life 
+            through the power of visual storytelling.
+          </p>
+          <a 
+            href="/contact" 
+            className="inline-block px-10 py-4 rounded-full font-display font-semibold text-lg tracking-wider transition-all duration-300 hover:scale-105 bg-gray-100 hover:bg-white text-gray-900"
+          >
+            START YOUR PROJECT
+          </a>
+        </div>
+      </div>
+
+      {/* Fullscreen Image Modal - 150% zoom and perfectly centered */}
+      {fullscreenImage && (
+        <div 
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+          onClick={closeFullscreen}
+        >
+          <div className="relative max-w-[150%] max-h-[150%] flex items-center justify-center">
+            <img
+              src={fullscreenImage}
+              alt="Fullscreen view"
+              className="max-w-full max-h-full object-contain"
+              style={{ 
+                maxWidth: '150vw', 
+                maxHeight: '150vh',
+                width: 'auto',
+                height: 'auto'
+              }}
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              onClick={closeFullscreen}
+              className="absolute top-4 right-4 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300"
+            >
+              <X className="h-6 w-6 text-white" />
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Portfolio;
+
+export default Portfolio
