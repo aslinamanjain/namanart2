@@ -12,7 +12,6 @@ const About: React.FC = () => {
     { name: 'Sony Music Entertainment', logo: '/Sony Music Entertainment.png' },
     { name: 'Warner Music India', logo: '/WARNER-MUSIC-INDIA-LOGO-e1709294747578.webp' },
     { name: 'Apni Dhun', logo: '/Apni Dhun Graphic Logo.png' },
-    { name: 'Brand Logo', logo: '/ekQ0AX5G_400x400.jpg' },
     { name: 'Images Brand', logo: '/images.png' },
     { name: 'Cropped Logo', logo: '/cropped-logo-1-1.png' },
     { name: 'Josh Skills', logo: '/5636Vx3Q_400x400.jpg' },
@@ -150,49 +149,8 @@ const About: React.FC = () => {
             </p>
           </div>
 
-          {/* Infinite Sliding Strip with Controls */}
+          {/* Simple Infinite Sliding Strip */}
           <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl">
-            {/* Navigation Buttons */}
-            <button
-              onClick={() => {
-                const strip = document.querySelector('.logo-strip');
-                if (strip) {
-                  strip.style.animationPlayState = strip.style.animationPlayState === 'paused' ? 'running' : 'paused';
-                  setTimeout(() => {
-                    const currentTransform = getComputedStyle(strip).transform;
-                    const matrix = new DOMMatrix(currentTransform);
-                    const currentX = matrix.m41;
-                    strip.style.transform = `translateX(${currentX + 200}px)`;
-                  }, 100);
-                }
-              }}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <svg className="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            
-            <button
-              onClick={() => {
-                const strip = document.querySelector('.logo-strip');
-                if (strip) {
-                  strip.style.animationPlayState = strip.style.animationPlayState === 'paused' ? 'running' : 'paused';
-                  setTimeout(() => {
-                    const currentTransform = getComputedStyle(strip).transform;
-                    const matrix = new DOMMatrix(currentTransform);
-                    const currentX = matrix.m41;
-                    strip.style.transform = `translateX(${currentX - 200}px)`;
-                  }, 100);
-                }
-              }}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <svg className="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-
             <div className="relative h-32 flex items-center overflow-hidden">
               <div className="logo-strip flex animate-scroll-left space-x-16 whitespace-nowrap">
                 {/* Triple the logos for seamless loop */}
@@ -207,24 +165,6 @@ const About: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </div>
-
-            {/* Pause/Play Control */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-              <button
-                onClick={() => {
-                  const strip = document.querySelector('.logo-strip');
-                  if (strip) {
-                    const isPaused = strip.style.animationPlayState === 'paused';
-                    strip.style.animationPlayState = isPaused ? 'running' : 'paused';
-                  }
-                }}
-                className="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg"
-              >
-                <svg className="h-4 w-4 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </button>
             </div>
           </div>
         </div>
