@@ -87,7 +87,7 @@ const Portfolio: React.FC = () => {
       year: '2023',
     },
 
-    // Advertisements - Original projects plus new YouTube videos
+    // Advertisements
     {
       id: 8,
       title: 'Brand Campaign',
@@ -97,53 +97,26 @@ const Portfolio: React.FC = () => {
       tags: ['Brand', 'Campaign', 'Narrative'],
       year: '2024',
     },
-    {
-      id: 9,
-      title: 'Corporate Identity',
-      category: 'advertisements',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Visual identity design for corporate branding',
-      tags: ['Corporate', 'Identity', 'Branding'],
-      year: '2024',
-    },
-    {
-      id: 10,
-      title: 'Product Launch',
-      category: 'advertisements',
-      image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Dynamic product launch campaign visuals',
-      tags: ['Product', 'Launch', 'Dynamic'],
-      year: '2023',
-    },
   ];
 
-  // YouTube Advertisement Videos - Added from About section
-  const youtubeAds = [
+  const advertisements = [
     {
       title: 'Karamyogi Atul Patel | TRIDENT GROUP',
       url: 'https://www.youtube.com/watch?v=h34UTWSKOyk',
       thumbnail: 'https://img.youtube.com/vi/h34UTWSKOyk/maxresdefault.jpg',
-      description: 'Corporate brand campaign showcasing leadership and vision',
-      tags: ['Corporate', 'Leadership', 'Brand'],
-      year: '2024'
+      description: 'Corporate brand campaign showcasing leadership and vision'
     },
     {
       title: 'Jeeto Baazi Khel Ke | ICC Men\'s Champions Trophy 2025',
       url: 'https://www.youtube.com/watch?v=nA0z8N04v70&list=RDnA0z8N04v70&start_radio=1',
       thumbnail: 'https://img.youtube.com/vi/nA0z8N04v70/maxresdefault.jpg',
-      description: 'Sports campaign for ICC Men\'s Champions Trophy 2025',
-      tags: ['Sports', 'ICC', 'Campaign'],
-      year: '2025'
+      description: 'Sports campaign for ICC Men\'s Champions Trophy 2025'
     }
   ];
 
   const filteredProjects = selectedCategory === 'all' 
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
-
-  const filteredYouTubeAds = selectedCategory === 'all' || selectedCategory === 'advertisements' 
-    ? youtubeAds 
-    : [];
 
   return (
     <div className="min-h-screen py-24 px-6 bg-gray-900">
@@ -175,20 +148,20 @@ const Portfolio: React.FC = () => {
           ))}
         </div>
 
-        {/* YouTube Advertisement Videos - Show when 'all' or 'advertisements' is selected */}
-        {filteredYouTubeAds.length > 0 && (
+        {/* Advertisement Videos Section - Only show when advertisements category is selected */}
+        {selectedCategory === 'advertisements' && (
           <div className="mb-16">
             <div className="text-center mb-12">
               <h2 className="font-heading text-4xl md:text-5xl font-normal mb-6 tracking-widest text-gray-100">
-                FEATURED CAMPAIGNS
+                ADVERTISEMENT CAMPAIGNS
               </h2>
               <p className="text-lg max-w-3xl mx-auto font-sans text-gray-300">
-                Recent advertisement campaigns and brand collaborations
+                Creating compelling visual narratives for brands and campaigns
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              {filteredYouTubeAds.map((ad, index) => (
+              {advertisements.map((ad, index) => (
                 <a
                   key={index}
                   href={ad.url}
@@ -210,29 +183,16 @@ const Portfolio: React.FC = () => {
                     <div className="absolute top-4 right-4">
                       <ExternalLink className="h-5 w-5 text-white/80" />
                     </div>
-                    <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-display font-medium">
-                      YOUTUBE
-                    </div>
                   </div>
                   <div className="p-6">
                     <h3 className="font-display text-xl font-semibold mb-2 tracking-wide text-gray-100 group-hover:text-gray-200 transition-colors duration-300">
                       {ad.title}
                     </h3>
-                    <p className="font-sans text-gray-400 text-sm mb-3">
+                    <p className="font-sans text-gray-400 text-sm mb-2">
                       {ad.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      {ad.tags.map((tag, tagIndex) => (
-                        <span
-                          key={tagIndex}
-                          className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-xs font-display font-medium tracking-wide"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
                     <p className="font-sans text-gray-500 text-xs">
-                      Click to watch on YouTube • {ad.year}
+                      Click to watch on YouTube
                     </p>
                   </div>
                 </a>
@@ -292,7 +252,7 @@ const Portfolio: React.FC = () => {
         </div>
 
         {/* Empty State */}
-        {filteredProjects.length === 0 && filteredYouTubeAds.length === 0 && (
+        {filteredProjects.length === 0 && (
           <div className="text-center py-20">
             <div className="w-24 h-24 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6">
               <Play className="h-8 w-8 text-gray-400" />
