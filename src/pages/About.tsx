@@ -37,7 +37,7 @@ const About: React.FC = () => {
         {/* Header */}
         <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h1 className="font-heading text-6xl md:text-7xl font-normal mb-6 tracking-ultra-wide text-gray-100">
-            ABOUT NAMAN ART
+            ABOUT NAMANART
           </h1>
           <p className="text-xl font-display font-medium tracking-widest text-gray-300">
             VISUAL STORYTELLER • CREATIVE DIRECTOR • AI INNOVATOR
@@ -68,26 +68,24 @@ const About: React.FC = () => {
               
               <div className="space-y-4 text-lg leading-relaxed font-sans text-gray-300">
                 <p>
-                  Welcome to my creative universe. I'm Naman, a visual storyteller who believes in the 
-                  power of emotion-driven narratives enhanced by cutting-edge artificial intelligence.
+                  Hi, I'm Naman, the visual mind behind NamanArt.
                 </p>
                 
                 <p>
-                  My journey began with a simple fascination: how can technology amplify human creativity 
-                  rather than replace it? This question has guided my work across multiple disciplines, 
-                  from directing compelling video content to crafting lyrical typography that dances 
-                  with music.
+                  I'm an independent visual artist working across music, brands, and digital media. 
+                  My work blends cinematic direction, motion design, and storytelling to create visuals 
+                  that not only look good but feel powerful. From music videos and concert visuals to 
+                  ad campaigns and digital art, I bring ideas to life with emotion, rhythm, and impact.
                 </p>
                 
                 <p>
-                  Through collaborations with artists like <span className="font-display font-semibold tracking-wide text-gray-100">Ikka</span> and 
-                  explorations of <span className="font-display font-semibold tracking-wide text-gray-100">Sufi themes</span>, I've discovered 
-                  that the most powerful stories emerge when traditional artistry meets technological innovation.
+                  Each project I take on is a collaboration — a chance to build something bold, expressive, 
+                  and unique. Whether you're an artist, a brand, or a creative studio, I'm here to craft 
+                  visuals that move people.
                 </p>
                 
-                <p>
-                  Each project is a journey of discovery, whether I'm creating immersive concert visuals 
-                  that sync with live performances or designing album artwork that captures the soul of music.
+                <p className="font-display font-semibold tracking-wide text-gray-100">
+                  Let's make something unforgettable.
                 </p>
               </div>
             </div>
@@ -150,7 +148,7 @@ const About: React.FC = () => {
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
               <h3 className="font-display text-2xl font-semibold mb-2 tracking-wide text-white">
-                "The Making Of: Sufi Soul Journey"
+                "The Making Of: Creative Journey"
               </h3>
               <p className="font-sans text-white/70">
                 A deep dive into the creative process behind one of my most meaningful projects
