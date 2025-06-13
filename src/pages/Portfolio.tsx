@@ -72,6 +72,7 @@ const Portfolio: React.FC = () => {
     { id: 'U9OyaeKqnRQ', title: 'Pregakem' },
     { id: 'DlHUSHptMek', title: 'Understanding your First Scan with FreeStyle Libre' },
     { id: 'h34UTWSKOyk', title: 'Limitless | Tridnet Group' },
+    { id: 'h34UTWSKOyk', title: 'ICC Mens Champions Trophy 2025' },
     { id: 'xBa6JJEdqcI', title: 'Sharing Data with FreeStyle LibreView' },
   ];
 
