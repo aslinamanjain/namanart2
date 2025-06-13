@@ -1,10 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 
 const About: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -16,24 +13,11 @@ const About: React.FC = () => {
     { name: 'Warner Music India', logo: '/WARNER-MUSIC-INDIA-LOGO-e1709294747578.webp' },
     { name: 'Apni Dhun', logo: '/Apni Dhun Graphic Logo.png' },
     { name: 'Brand Logo', logo: '/ekQ0AX5G_400x400.jpg' },
+    { name: 'Images Brand', logo: '/images.png' },
+    { name: 'Cropped Logo', logo: '/cropped-logo-1-1.png' },
+    { name: 'Josh Skills', logo: '/5636Vx3Q_400x400.jpg' },
+    { name: 'Desi Music Factory', logo: '/afaqs_2020-04_b8bc1ebc-0319-4e2a-bdab-00c52206e46b_image002.jpg' },
   ];
-
-  // Auto-slide functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % brands.length);
-    }, 4000); // Change slide every 4 seconds
-
-    return () => clearInterval(interval);
-  }, [brands.length]);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % brands.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + brands.length) % brands.length);
-  };
 
   return (
     <div className="min-h-screen py-24 px-6 bg-gray-900">
@@ -107,78 +91,81 @@ const About: React.FC = () => {
             </p>
           </div>
 
-          {/* Logo Carousel */}
-          <div className="relative bg-white rounded-2xl p-8 overflow-hidden">
+          {/* Infinite Sliding Strip with Controls */}
+          <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl">
             {/* Navigation Buttons */}
             <button
-              onClick={prevSlide}
+              onClick={() => {
+                const strip = document.querySelector('.logo-strip');
+                if (strip) {
+                  strip.style.animationPlayState = strip.style.animationPlayState === 'paused' ? 'running' : 'paused';
+                  setTimeout(() => {
+                    const currentTransform = getComputedStyle(strip).transform;
+                    const matrix = new DOMMatrix(currentTransform);
+                    const currentX = matrix.m41;
+                    strip.style.transform = `translateX(${currentX + 200}px)`;
+                  }, 100);
+                }
+              }}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              <ChevronLeft className="h-6 w-6 text-gray-600" />
+              <svg className="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
             </button>
             
             <button
-              onClick={nextSlide}
+              onClick={() => {
+                const strip = document.querySelector('.logo-strip');
+                if (strip) {
+                  strip.style.animationPlayState = strip.style.animationPlayState === 'paused' ? 'running' : 'paused';
+                  setTimeout(() => {
+                    const currentTransform = getComputedStyle(strip).transform;
+                    const matrix = new DOMMatrix(currentTransform);
+                    const currentX = matrix.m41;
+                    strip.style.transform = `translateX(${currentX - 200}px)`;
+                  }, 100);
+                }
+              }}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              <ChevronRight className="h-6 w-6 text-gray-600" />
+              <svg className="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </button>
 
-            {/* Carousel Container */}
-            <div 
-              ref={carouselRef}
-              className="flex transition-transform duration-700 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {brands.map((brand, index) => (
-                <div
-                  key={index}
-                  className="w-full flex-shrink-0 flex items-center justify-center py-12"
-                >
-                  <div className="max-w-xs max-h-32 flex items-center justify-center">
+            <div className="relative h-32 flex items-center overflow-hidden">
+              <div className="logo-strip flex animate-scroll-left space-x-16 whitespace-nowrap">
+                {/* Triple the logos for seamless loop */}
+                {brands.concat(brands, brands).map((brand, index) => (
+                  <div key={index} className="flex-shrink-0 h-20 flex items-center justify-center px-8">
                     <img
                       src={brand.logo}
                       alt={brand.name}
-                      className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-500"
-                      style={{ maxHeight: '120px', maxWidth: '300px' }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Slide Indicators */}
-            <div className="flex justify-center space-x-2 mt-6">
-              {brands.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide 
-                      ? 'bg-gray-600 scale-110' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Infinite Sliding Strip (Alternative Visual) */}
-          <div className="mt-8 bg-white rounded-2xl overflow-hidden">
-            <div className="relative h-24 flex items-center">
-              <div className="flex animate-scroll-left space-x-16 whitespace-nowrap">
-                {/* First set of logos */}
-                {brands.concat(brands).map((brand, index) => (
-                  <div key={index} className="flex-shrink-0 h-16 flex items-center justify-center px-8">
-                    <img
-                      src={brand.logo}
-                      alt={brand.name}
-                      className="max-h-full max-w-full object-contain filter grayscale opacity-60"
-                      style={{ maxHeight: '60px', maxWidth: '150px' }}
+                      className="max-h-full max-w-full object-contain hover:scale-110 transition-transform duration-300"
+                      style={{ maxHeight: '80px', maxWidth: '200px' }}
                     />
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Pause/Play Control */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+              <button
+                onClick={() => {
+                  const strip = document.querySelector('.logo-strip');
+                  if (strip) {
+                    const isPaused = strip.style.animationPlayState === 'paused';
+                    strip.style.animationPlayState = isPaused ? 'running' : 'paused';
+                  }
+                }}
+                className="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg"
+              >
+                <svg className="h-4 w-4 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -201,12 +188,16 @@ const About: React.FC = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-33.333%);
           }
         }
         
         .animate-scroll-left {
-          animation: scroll-left 20s linear infinite;
+          animation: scroll-left 30s linear infinite;
+        }
+
+        .logo-strip:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </div>
