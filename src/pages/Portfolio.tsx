@@ -635,68 +635,6 @@ const Portfolio: React.FC = () => {
           </div>
         )}
 
-        {/* Advertisements Section */}
-        {showAdvertisements && (
-          <div className="mb-16">
-            <h2 className="font-heading text-4xl md:text-5xl font-normal text-center mb-12 tracking-widest text-gray-100">
-              ADVERTISEMENTS SHOWCASE
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {advertisementVideos.map((video, index) => (
-                <div
-                  key={video.id}
-                  className={`group cursor-pointer animate-fade-in`}
-                  style={{ animationDelay: `${index * 0.05}s` }}
-                >
-                  <div className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105">
-                    {/* Video Thumbnail */}
-                    <div className="relative aspect-video overflow-hidden">
-                      <img
-                        src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
-                        alt={video.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        onError={(e) => {
-                          // Fallback to medium quality thumbnail if maxres doesn't exist
-                          e.currentTarget.src = `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`;
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
-                          <Play className="h-8 w-8 text-white ml-1" fill="white" />
-                        </div>
-                      </div>
-                      
-                      {/* YouTube Link */}
-                      <a
-                        href={`https://www.youtube.com/watch?v=${video.id}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute inset-0 z-10"
-                        aria-label={`Watch ${video.title} on YouTube`}
-                      />
-                    </div>
-
-                    {/* Video Info */}
-                    <div className="p-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-display font-medium uppercase tracking-widest text-gray-400">
-                          ADVERTISEMENT
-                        </span>
-                        <ExternalLink className="h-4 w-4 text-gray-500 group-hover:text-gray-300 transition-colors duration-300" />
-                      </div>
-                      
-                      <h3 className="font-display text-lg font-semibold group-hover:text-gray-300 transition-colors duration-300 tracking-wide text-gray-100 line-clamp-2">
-                        {video.title}
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
         {/* Lyrical Typography Videos Section */}
         {showTypographyVideos && (
           <div className="mb-16">
@@ -748,6 +686,61 @@ const Portfolio: React.FC = () => {
                         <ExternalLink className="h-4 w-4 text-gray-500 group-hover:text-gray-300 transition-colors duration-300" />
                       </div>
                       
+                      <h3 className="font-display text-lg font-semibold group-hover:text-gray-300 transition-colors duration-300 tracking-wide text-gray-100 line-clamp-2">
+                        {video.title}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Advertisements Section */}
+        {showAdvertisements && (
+          <div className="mb-16">
+            <h2 className="font-heading text-4xl md:text-5xl font-normal text-center mb-12 tracking-widest text-gray-100">
+              ADVERTISEMENTS SHOWCASE
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {advertisementVideos.map((video, index) => (
+                <div
+                  key={video.id}
+                  className={`group cursor-pointer animate-fade-in`}
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  <div className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    <div className="relative aspect-video overflow-hidden">
+                      <img
+                        src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        onError={(e) => {
+                          e.currentTarget.src = `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`;
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                          <Play className="h-8 w-8 text-white ml-1" fill="white" />
+                        </div>
+                      </div>
+                      <a
+                        href={`https://www.youtube.com/watch?v=${video.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 z-10"
+                        aria-label={`Watch ${video.title} on YouTube`}
+                      />
+                    </div>
+                    <div className="p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-display font-medium uppercase tracking-widest text-gray-400">
+                          ADVERTISEMENT
+                        </span>
+                        <ExternalLink className="h-4 w-4 text-gray-500 group-hover:text-gray-300 transition-colors duration-300" />
+                      </div>
                       <h3 className="font-display text-lg font-semibold group-hover:text-gray-300 transition-colors duration-300 tracking-wide text-gray-100 line-clamp-2">
                         {video.title}
                       </h3>
